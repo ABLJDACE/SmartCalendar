@@ -1,0 +1,99 @@
+/* components/NavBar.module.css */
+
+/* ===== LAYOUT ===== */
+.nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+/* ===== TABS (ALL BUTTONS) ===== */
+.tab {
+  padding: 10px 20px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-weight: 500;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+/* Hover lift */
+.tab:hover {
+  background: color-mix(in srgb, var(--accent) 10%, var(--card-bg));
+  border-color: var(--accent);
+  color: var(--accent-dark);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.25);
+}
+
+/* Active/current tab */
+.active {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent-dark);
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transform: translateY(-1px);
+}
+
+/* Keyboard focus */
+.tab:focus-visible {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+/* Press effect */
+.tab:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2) inset;
+}
+
+/* ===== THEME TOGGLE BUTTON ===== */
+.themeToggle {
+  padding: 8px 14px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--text);
+  font-size: 1.05rem;
+  transition: all 0.25s ease;
+  box-shadow: 0 2px 4px var(--shadow);
+}
+
+/* Hover look (both modes) */
+.themeToggle:hover {
+  background: color-mix(in srgb, var(--accent) 15%, var(--card-bg));
+  color: #ffffff;
+  border-color: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* Dark-mode fix: make background dark and text white */
+.dark .themeToggle {
+  background: color-mix(in srgb, var(--card-bg) 60%, #000);
+  color: #ffffff;
+  border-color: var(--border);
+  box-shadow: 0 2px 6px var(--shadow);
+}
+.dark .themeToggle:hover {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #ffffff;
+  transform: translateY(-1px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 640px) {
+  .nav {
+    gap: 10px;
+    margin-bottom: 16px;
+  }
+  .tab {
+    padding: 8px 14px;
+    font-size: 0.9rem;
+  }
+}

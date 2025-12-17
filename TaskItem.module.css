@@ -1,0 +1,104 @@
+/* components/TaskItem.module.css */
+
+/* main task item container */
+.item {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 12px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 14px 16px;
+  margin-bottom: 10px;
+  color: var(--text);
+  transition: all 0.2s ease;
+}
+
+.item:hover {
+  box-shadow: 0 4px 12px var(--shadow);
+  transform: translateY(-1px);
+}
+
+/* left section with checkbox and text */
+.left {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex: 1;
+  min-width: 0; /* prevent overflow */
+}
+
+/* checkbox styling */
+.checkbox {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  flex-shrink: 0;
+  accent-color: var(--accent);
+  margin-top: 2px;
+}
+
+/* block with text info */
+.detailsBlock {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+/* task name */
+.name {
+  font-weight: 600;
+  font-size: 1rem;
+  word-break: break-word;
+}
+
+/* subdetails line */
+.subdetails {
+  display: flex;
+  flex-direction: column;
+  font-size: 0.9rem;
+  opacity: 0.9;
+  color: var(--subtext);
+  gap: 2px;
+}
+
+/* deadline text */
+.deadline {
+  font-size: 0.85rem;
+  opacity: 0.8;
+}
+
+/* actions (edit / delete) */
+.actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+}
+
+/* buttons */
+.actions button {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  transition: transform 0.15s ease;
+  color: var(--text);
+}
+
+.actions button:hover {
+  transform: scale(1.2);
+}
+
+/* states */
+.overdue {
+  border-color: var(--danger-border);
+}
+
+.done {
+  text-decoration: line-through;
+  color: var(--text);
+}

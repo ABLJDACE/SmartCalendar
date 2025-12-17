@@ -1,0 +1,58 @@
+/* components/EditTaskModal.module.css */
+.overlay {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1000;
+}
+
+.modal {
+  background: #ffffff;
+  padding: 18px;
+  border-radius: 10px;
+  width: min(720px, 96%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.form {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  margin-top: 8px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  margin-bottom: 6px;
+  font-weight: 500;
+}
+
+.field input,
+.field select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.actions {
+  grid-column: 1 / -1;
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  margin-top: 8px;
+}
+
+.actions button {
+  padding: 8px 12px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  background: #eef2ff;
+}

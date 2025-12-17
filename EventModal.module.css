@@ -1,0 +1,111 @@
+/* components/EventModal.module.css */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.modal {
+  background: #ffffff;
+  border-radius: 12px;
+  padding: 18px;
+  width: min(720px, 96%);
+  box-shadow: 0 8px 30px rgba(0,0,0,0.12);
+}
+
+.form {
+  display: grid;
+  gap: 12px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field textarea {
+  padding: 8px;
+  border: 1px solid #e5e7eb;
+  border-radius: 8px;
+}
+
+.row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 600;
+}
+
+.colors {
+  display: flex;
+  gap: 8px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.colorSwatch {
+  width: 26px;
+  height: 26px;
+  border-radius: 9999px;
+  border: none;
+  cursor: pointer;
+}
+
+.actions {
+  display: flex;
+  gap: 8px;
+  margin-top: 8px;
+  justify-content: flex-end;
+}
+
+.save {
+  background: #2563eb;
+  color: #ffffff;
+  border: 1.5px solid #1d4ed8;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(37,99,235,0.25);
+}
+
+.cancel {
+  background: #f3f4f6;
+  color: #1f2937;
+  border: 1.5px solid #cbd5e1;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.delete {
+  background: #fee2e2;
+  color: #991b1b;
+  border: 1.5px solid #fecaca;
+  border-radius: 9999px;
+  padding: 8px 14px;
+  cursor: pointer;
+}
+
+.error {
+  color: #b91c1c;
+  background: #fee2e2;
+  border: 1px solid #fecaca;
+  padding: 8px;
+  border-radius: 8px;
+}

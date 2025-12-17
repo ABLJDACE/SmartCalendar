@@ -1,0 +1,200 @@
+/* styles/scheduleTasks.module.css */
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+  padding: 24px;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+.title {
+  text-align: center;
+  font-size: 1.8rem;
+  margin-bottom: 6px;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.subtitle {
+  text-align: center;
+  color: var(--text);
+  opacity: 0.8;
+  margin-bottom: 20px;
+  font-size: 0.95rem;
+}
+
+.empty {
+  text-align: center;
+  color: var(--text);
+  opacity: 0.8;
+  font-style: italic;
+  padding: 40px;
+  background: var(--card-bg);
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  box-shadow: 0 2px 10px var(--shadow);
+}
+
+/* === PROGRESS BAR SECTION === */
+.progressBar {
+  text-align: center;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 8px var(--shadow);
+  color: var(--text);
+}
+
+.resetBtn {
+  margin-top: 10px;
+  background: var(--accent);
+  color: #ffffff;
+  border: 1.5px solid var(--accent-dark);
+  border-radius: 9999px;
+  padding: 8px 14px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.2s ease;
+  box-shadow: 0 4px 8px rgba(37, 99, 235, 0.25);
+}
+.resetBtn:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* === DAY CARDS === */
+.dayBlock {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px var(--shadow);
+  margin-bottom: 20px;
+  padding: 18px;
+  border: 1px solid var(--border);
+  transition: background 0.3s ease, color 0.3s ease;
+  color: var(--text);
+}
+
+.dayHeader {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 12px;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 4px;
+  text-align: left;
+}
+
+.dayTasks {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+/* === TASK ITEMS === */
+.taskItem {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: color-mix(in srgb, var(--card-bg) 90%, var(--bg));
+  border-radius: 10px;
+  padding: 10px 14px;
+  border: 1px solid var(--border);
+  transition: all 0.2s ease;
+  color: var(--text);
+}
+.taskItem:hover {
+  background: color-mix(in srgb, var(--accent) 8%, var(--card-bg));
+}
+
+.completed {
+  background: color-mix(in srgb, var(--success-bg) 25%, var(--card-bg)) !important;
+  border-left: 4px solid var(--success-border);
+  opacity: 0.8;
+}
+
+/* === TASK INFO === */
+.taskInfo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+}
+
+.time {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+  font-weight: 500;
+  width: 120px;
+}
+
+.name {
+  flex: 1;
+  font-weight: 600;
+}
+
+.session {
+  font-size: 0.8rem;
+  opacity: 0.85;
+}
+
+.priority {
+  text-transform: capitalize;
+  font-weight: 600;
+  border-radius: 9999px;
+  padding: 4px 12px;
+  color: #ffffff;
+  min-width: 70px;
+  text-align: center;
+}
+
+.priority.high {
+  background: #dc2626;
+}
+.priority.medium {
+  background: #2563eb;
+}
+.priority.low {
+  background: #16a34a;
+}
+
+/* === DARK MODE FIXES === */
+.dark .container,
+.dark .progressBar,
+.dark .dayBlock,
+.dark .taskItem,
+.dark .empty {
+  background: color-mix(in srgb, var(--card-bg) 70%, #000);
+  color: #ffffff;
+  border-color: var(--border);
+}
+
+.dark .dayHeader,
+.dark .time,
+.dark .name,
+.dark .session {
+  color: #ffffff;
+}
+
+.dark .resetBtn {
+  background: var(--accent-dark);
+  border-color: var(--accent-dark);
+  color: #ffffff;
+}
+.dark .resetBtn:hover {
+  background: #1e40af;
+}
+
+/* === RESPONSIVE === */
+@media (max-width: 768px) {
+  .dayBlock {
+    padding: 14px;
+  }
+  .taskItem {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+  }
+}

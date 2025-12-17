@@ -1,0 +1,62 @@
+/* components/Dashboard.module.css */
+
+.dashboard {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  color: var(--text);
+}
+
+.stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 16px;
+}
+
+.card {
+  background: var(--card-bg);
+  border-radius: 12px;
+  padding: 16px;
+  text-align: center;
+  box-shadow: 0 3px 8px var(--shadow);
+  border: 1px solid var(--border);
+  transition: transform 0.15s ease;
+  color: var(--text);
+}
+.card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
+}
+
+.card h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: var(--text);
+}
+
+.card p {
+  color: var(--subtext);
+}
+
+.links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+
+.links button {
+  padding: 10px 16px;
+  border-radius: 9999px;
+  border: 1.5px solid var(--border);
+  background: var(--card-bg);
+  color: var(--accent);
+  font-weight: 600;
+  transition: all 0.2s ease;
+}
+
+.links button:hover {
+  background: var(--accent);
+  color: #ffffff;
+  border-color: var(--accent-dark);
+}

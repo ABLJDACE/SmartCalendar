@@ -1,0 +1,254 @@
+/* ===== GLOBAL THEME COLORS ===== */
+
+:root {
+  --bg: #f4f6f8;
+  --card-bg: #ffffff;
+  --text: #1f2937;
+  --subtext: #4b5563;
+  --border: #e5e7eb;
+  --accent: #2563eb;
+  --accent-dark: #1d4ed8;
+  --danger-border: #ef4444;
+  --danger-bg: #fee2e2;
+  --shadow: rgba(0, 0, 0, 0.08);
+}
+
+:root.dark {
+  --bg: #0f172a;
+  --card-bg: #1e293b;
+  --text: #f9fafb;
+  --subtext: #cbd5e1;
+  --border: #334155;
+  --accent: #3b82f6;
+  --accent-dark: #2563eb;
+  --danger-border: #b91c1c;
+  --danger-bg: #7f1d1d;
+  --shadow: rgba(255, 255, 255, 0.05);
+}
+
+/* ===== RESET & LAYOUT ===== */
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html,
+body,
+#__next {
+  height: 100%;
+}
+
+body {
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Arial,
+    sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  transition: background 0.3s ease, color 0.3s ease;
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.5;
+  padding: 0;
+}
+
+.dark body {
+  background: var(--bg);
+  color: #ffffff;
+}
+
+/* ===== GLOBAL COMPONENT STYLES ===== */
+
+input,
+select,
+button,
+textarea {
+  font: inherit;
+  color: inherit;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  background: var(--card-bg);
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+button {
+  cursor: pointer;
+}
+
+button.primary,
+button[type="submit"],
+.addButton {
+  background: var(--accent);
+  border: none;
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  padding: 10px 20px;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+button.primary:hover,
+button[type="submit"]:hover,
+.addButton:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+.dark button.primary,
+.dark button[type="submit"],
+.dark .addButton {
+  background: var(--accent);
+  color: #fff;
+}
+
+.dark button.primary:hover,
+.dark button[type="submit"]:hover,
+.dark .addButton:hover {
+  background: var(--accent-dark);
+}
+
+/* ===== FORM FIELD LAYOUT ===== */
+
+label {
+  font-weight: 500;
+  margin-bottom: 4px;
+  display: inline-block;
+}
+
+input,
+select {
+  height: 40px;
+}
+
+/* ===== CARDS / CONTAINERS ===== */
+
+.card,
+.container,
+.settings,
+.dashboard,
+.nav,
+.dayBlock,
+.modal {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  box-shadow: 0 4px 10px var(--shadow);
+  padding: 16px;
+  transition: all 0.25s ease;
+}
+
+.dark .card,
+.dark .container,
+.dark .settings,
+.dark .dashboard,
+.dark .nav,
+.dark .dayBlock,
+.dark .modal {
+  background: var(--card-bg);
+  color: #fff;
+  box-shadow: 0 4px 10px var(--shadow);
+}
+
+/* ===== LINKS ===== */
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* ===== SCROLLBAR ===== */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 8px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent);
+}
+
+/* ===== DATETIME PICKER ===== */
+
+/* Make datetime-local match your theme and spacing */
+input[type="datetime-local"] {
+  appearance: none;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  height: 40px;
+  padding: 8px 10px;
+  width: 100%;
+  font-size: 0.95rem;
+}
+
+/* Calendar and clock icons visible in both themes */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(0%);
+}
+
+.dark input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%) brightness(120%);
+}
+
+/* ===== HEADINGS ===== */
+
+h1,
+h2,
+h3,
+h4 {
+  font-weight: 600;
+  color: var(--text);
+}
+
+.dark h1,
+.dark h2,
+.dark h3,
+.dark h4 {
+  color: #fff;
+}
+
+/* Style datetime-local for blue-white theme */
+input[type="datetime-local"] {
+  appearance: none;
+  width: 100%;
+  background: var(--card-bg);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 8px 10px;
+  font-size: 0.95rem;
+  height: 40px;
+  transition: all 0.2s ease;
+}
+
+input[type="datetime-local"]:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+/* Ensure calendar icon is visible */
+input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  cursor: pointer;
+  filter: invert(0%);
+}
+
+.dark input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+  filter: invert(100%) brightness(120%);
+}

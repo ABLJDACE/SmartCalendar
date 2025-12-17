@@ -1,0 +1,75 @@
+/* components/AddTaskPopup.module.css */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+
+.popup {
+  background: #ffffff;
+  border-radius: 10px;
+  padding: 20px;
+  width: min(400px, 95%);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 0.2s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 10px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label {
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.field input,
+.field select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #d1d5db;
+}
+
+.actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.actions button {
+  background: #1976d2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.actions button:hover {
+  background: #125aa0;
+}

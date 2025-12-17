@@ -1,0 +1,19 @@
+/* components/TaskList.module.css */
+
+.empty {
+  color: var(--subtext);
+  padding: 16px;
+  font-style: italic;
+  text-align: center;
+  background: var(--card-bg);
+  border-radius: 10px;
+  border: 1px dashed var(--border);
+  transition: background 0.3s ease, color 0.3s ease;
+}
+
+/* Dark-mode version: invert background and lighten text */
+.dark .empty {
+  background: color-mix(in srgb, var(--card-bg) 70%, #000);
+  color: #e2e8f0;
+  border-color: var(--border);
+}

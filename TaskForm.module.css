@@ -1,0 +1,225 @@
+/* ===== TaskForm.module.css ===== */
+
+.form {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 2px 8px var(--shadow);
+  padding: 32px 40px; /* increased spacing */
+  display: flex;
+  flex-direction: column;
+  gap: 24px; /* a bit more breathing room between rows */
+  width: 100%;
+  max-width: 1100px; /* matches task display box width */
+  margin: 0 auto;
+  margin-bottom: 80px; /* spacing before task list */
+}
+
+/* grid rows */
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  flex: 1;
+  min-width: 220px;
+}
+
+.fieldButton {
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* labels */
+.field label {
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--text);
+}
+
+/* inputs, selects, and date picker input */
+.field input,
+.field select,
+.input {
+  font: inherit;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 10px 12px;
+  background: var(--card-bg);
+  color: var(--text);
+  height: 42px;
+  transition: all 0.2s ease;
+  width: 100%;
+}
+
+.field input:focus,
+.field select:focus,
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px color-mix(in srgb, var(--accent) 25%, transparent);
+}
+
+/* Add Task button */
+.addButton {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 10px;
+  padding: 12px 26px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.25);
+}
+
+.addButton:hover {
+  background: var(--accent-dark);
+  transform: translateY(-1px);
+}
+
+/* ===== react-datepicker theming ===== */
+.customCalendar {
+  font-family: inherit;
+  background: var(--card-bg);
+  color: var(--text);
+  border-radius: 10px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 12px var(--shadow);
+}
+
+.react-datepicker__header {
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border);
+}
+
+.react-datepicker__day,
+.react-datepicker__time-list-item {
+  color: var(--text);
+  padding: 5px;
+}
+
+.react-datepicker__day--selected,
+.react-datepicker__time-list-item--selected {
+  background-color: var(--accent-dark) !important;
+  color: #fff !important;
+  border-radius: 4px;
+}
+
+.react-datepicker__time-list-item:hover,
+.react-datepicker__day:hover {
+  background-color: var(--accent);
+  color: #fff;
+}
+
+/* === Calendar Button + Hidden Picker === */
+.calendarBtn {
+  background: var(--accent);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  height: 42px;
+  width: 42px;
+  font-size: 1.1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.calendarBtn:hover {
+  background: var(--accent-dark);
+}
+
+.hiddenPicker {
+  display: none !important;
+}
+
+/* Dark Mode */
+:global(.dark) .customCalendar {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  color: #fff;
+}
+
+:global(.dark) .react-datepicker__day,
+:global(.dark) .react-datepicker__time-list-item {
+  color: #fff;
+}
+
+/* ===== Past Deadline Confirmation Popup ===== */
+
+.confirmOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.confirmPopup {
+  background: var(--card-bg);
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  padding: 24px 28px;
+  max-width: 400px;
+  text-align: center;
+  border: 1px solid var(--border);
+}
+
+.confirmPopup p {
+  font-size: 1rem;
+  color: var(--text);
+  margin-bottom: 20px;
+  line-height: 1.4;
+}
+
+.confirmButtons {
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.confirmYes,
+.confirmCancel {
+  padding: 8px 18px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.confirmYes {
+  background: var(--accent);
+  color: #fff;
+}
+
+.confirmYes:hover {
+  background: var(--accent-dark);
+}
+
+.confirmCancel {
+  background: var(--border);
+  color: var(--text);
+}
+
+.confirmCancel:hover {
+  background: color-mix(in srgb, var(--border) 70%, var(--text) 30%);
+}
